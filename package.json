@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve & ngtw watch",
+    "build": "ngtw build && ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prestart": "ngtw build"
   },
   "private": true,
   "dependencies": {
@@ -19,18 +20,21 @@
     "@angular/platform-browser": "~10.0.0",
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
+    "@fortawesome/fontawesome-free": "^5.13.1",
+    "ngx-socket-io": "^3.2.0",
     "rxjs": "~6.5.5",
+    "sweetalert2": "^9.15.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1000.0",
-    "@angular/cli": "~10.0.0",
+    "@angular-devkit/build-angular": "^0.1000.1",
+    "@angular/cli": "^10.0.1",
     "@angular/compiler-cli": "~10.0.0",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
-    "codelyzer": "^6.0.0-next.1",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -39,8 +43,9 @@
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
+    "tailwindcss": "^1.4.6",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.9.5"
+    "typescript": "^3.9.6"
   }
 }

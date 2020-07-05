@@ -1,0 +1,9 @@
+<div class="h-screen py-16">
+  <span>Last modification by "name user"</span>
+  <textarea
+    class="w-full h-full text-sm rounded-lg resize-none border border-gray-700 px-6 py-6"
+    [(ngModel)]="document.doc"
+    (keyup)="editDoc()"
+    placeholder="Write your text..."
+  ></textarea>
+</div>
