@@ -1,5 +1,9 @@
-<div class="h-screen py-16">
-  <span>Last modification by "name user"</span>
+<h1>
+  Last modification by:
+  <span [(ngModel)]="userName">{{ userName }}</span>
+</h1>
+
+<div class="h-screen py-4">
   <textarea
     class="w-full h-full text-sm rounded-lg resize-none border border-gray-700 px-6 py-6"
     [(ngModel)]="document.doc"

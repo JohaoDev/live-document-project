@@ -7,9 +7,8 @@ import { SocketJwtService } from './socket-jwt.service';
   providedIn: 'root',
 })
 export class DocsService {
-  counter = 0;
-
   currentDoc = this.socket.fromEvent<Docs>('manageData');
+  currentUserName = this.socket.fromEvent<string>('userName');
   docs = this.socket.fromEvent<string[]>('getData');
 
   constructor(private socket: SocketJwtService) {}
@@ -28,5 +27,10 @@ export class DocsService {
 
   editDoc(doc: Docs) {
     this.socket.emit('editDoc', doc);
+  }
+
+  lastUserChange(userName) {
+    console.log(this.currentUserName);
+    this.socket.emit('lastUserChange', userName);
   }
 }

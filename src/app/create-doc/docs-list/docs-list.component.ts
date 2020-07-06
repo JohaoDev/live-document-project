@@ -10,16 +10,11 @@ import { DocsService } from '../../services/docs.service';
 export class DocsListComponent implements OnInit, OnDestroy {
   docs: Observable<string[]>;
   currentDoc: string;
-  // username;
-  // date;
   private _docSubscribe: Subscription;
 
   constructor(private docsService: DocsService) {}
 
   ngOnInit(): void {
-    // this.name();
-    // this.username = localStorage.getItem('name');
-    // this.date = Date();
     this.docs = this.docsService.docs;
     this._docSubscribe = this.docsService.currentDoc.subscribe(
       (doc) => (this.currentDoc = doc.id)
@@ -39,14 +34,4 @@ export class DocsListComponent implements OnInit, OnDestroy {
 
     this.docsService.addDoc({ id: '', doc: '' });
   }
-
-  // name() {
-  //   let name = prompt("What's your name?", '');
-
-  //   if (name != null) {
-  //     localStorage.setItem('name', name);
-  //   } else {
-  //     alert('Pls, enter your name');
-  //   }
-  // }
 }
